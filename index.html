@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Based on what you know about me...</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .masonry {
+      column-count: 3;
+      column-gap: 1rem;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+  <header class="p-6 bg-white shadow-md">
+    <h1 class="text-2xl font-bold text-center">Based on what you know about me...</h1>
+    <p class="text-center text-gray-600 mt-2">Let ChatGPT be your guru</p>
+  </header>
+  <main class="p-6">
+    <section class="masonry">
+      <!-- Prompt cards will be inserted here -->
+    </section>
+  </main>
+  <footer class="p-6 text-center text-sm text-gray-500">
+    Made with ❤️ by Mas-n
+  </footer>
+  <script>
+    const prompts = [
+      { category: "Based on What You Know", text: "Based on what you know about me, create a SWOT analysis of my personal and professional potential" },
+      { category: "Based on What You Know", text: "Based on what you know about me, identify my top three blind spots" },
+      { category: "Based on What You Know", text: "Based on what you know about me, predict my most likely career pivot" },
+      { category: "Based on What You Know", text: "Based on what you know about me, outline my unrecognized talents" },
+      { category: "Based on What You Know", text: "Based on what you know about me, describe my core psychological motivators" },
+
+
+      { category: "Personal Growth", text: "Based on my communication patterns, suggest three communication skills I should develop" },
+      { category: "Personal Growth", text: "Based on my current challenges, design a 30-day personal development plan" },
+      { category: "Personal Growth", text: "Based on my interests, recommend a learning path that would challenge and excite me" },
+      { category: "Personal Growth", text: "Based on my personality, suggest unconventional ways I could step out of my comfort zone" },
+      { category: "Personal Growth", text: "Based on my current life stage, predict potential future obstacles and how to preempt them" },
+
+
+      { category: "Psychological Profiling", text: "Based on our conversations, create a detailed personality profile" },
+      { category: "Psychological Profiling", text: "Based on my decision-making history, analyze my core decision-making biases" },
+      { category: "Psychological Profiling", text: "Based on my expressed values, map out my potential life philosophy" },
+      { category: "Psychological Profiling", text: "Based on my stress responses, suggest personalized stress management techniques" },
+      { category: "Psychological Profiling", text: "Based on my relationship patterns, provide insights into my interpersonal dynamics" },
+
+
+
+      { category: "Future Projection", text: "Based on my current trajectory, simulate potential life outcomes in 2, 6, and 12 months" },
+      { category: "Future Projection", text: "Based on my skills and interests, predict emerging career opportunities for me" },
+      { category: "Future Projection", text: "Based on my current network and connections, suggest strategic relationship developments" },
+      { category: "Future Projection", text: "Based on my learning style, design a personalized continuous learning roadmap" },
+      { category: "Future Projection", text: "Based on my current challenges, forecast potential breakthrough moments" },
+
+
+
+      { category: "Deep Introspection", text: "Based on what you know about me, identify my most significant internal conflict" },
+      { category: "Deep Introspection", text: "Based on my expressed fears and aspirations, draft a personal mission statement" },
+      { category: "Deep Introspection", text: "Based on my past experiences, uncover potential unresolved psychological patterns" },
+      { category: "Deep Introspection", text: "Based on my achievements and setbacks, construct a narrative of my personal resilience" },
+      { category: "Deep Introspection", text: "Based on my interactions, reveal my unconscious motivational structures" },
+      // Add more prompts as needed
+    ];
+
+    const masonry = document.querySelector('.masonry');
+
+    // Render prompt cards
+    prompts.forEach(prompt => {
+      const card = document.createElement('div');
+      card.className = "masonry-item bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition";
+      card.innerHTML = `
+        <h3 class="text-sm text-gray-500 font-semibold">${prompt.category}</h3>
+        <p class="mt-2 text-gray-800">${prompt.text}</p>
+      `;
+      masonry.appendChild(card);
+    });
+  </script>
+</body>
+</html>
